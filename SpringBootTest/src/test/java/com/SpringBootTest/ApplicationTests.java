@@ -28,7 +28,7 @@ public class ApplicationTests {
     public void test() throws Exception {
 
         // 创建10条记录
-//        userRepository.save(new com.SpringBootTest.com.SpringBootTest.domain.User.User("AAA", 10));
+        userRepository.save(new com.SpringBootTest.domain.User("AAA", 10));
 
 
         // 测试findAll, 查询所有记录
