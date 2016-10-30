@@ -36,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/SpringBootTest/domain/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-243">
@@ -68,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/SpringBootTest/domain/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret line="31" column="29" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="29" />
+            <state relative-caret-position="-82">
+              <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
               <folding>
                 <element signature="e#1402#1403#0" expanded="true" />
                 <element signature="e#1433#1434#0" expanded="true" />
@@ -900,7 +900,7 @@
       <workItem from="1477778935119" duration="4156000" />
       <workItem from="1477783910258" duration="763000" />
       <workItem from="1477807333681" duration="1366000" />
-      <workItem from="1477839580027" duration="12934000" />
+      <workItem from="1477839580027" duration="13048000" />
     </task>
     <servers />
   </component>
@@ -937,7 +937,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38540000" />
+    <option name="totallyTimeSpent" value="38654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="805" extended-state="0" />
@@ -1494,27 +1494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/SpringBootTest/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="29" />
-          <folding>
-            <element signature="e#1402#1403#0" expanded="true" />
-            <element signature="e#1433#1434#0" expanded="true" />
-            <element signature="e#1481#1482#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1553#1554#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1623#1624#0" expanded="true" />
-            <element signature="e#1657#1658#0" expanded="true" />
-            <element signature="e#1695#1696#0" expanded="true" />
-            <element signature="e#1729#1730#0" expanded="true" />
-            <element signature="e#1783#1784#0" expanded="true" />
-            <element signature="e#1829#1830#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/SpringBootTest/ApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1531,6 +1510,27 @@
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/SpringBootTest/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-82">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+          <folding>
+            <element signature="e#1402#1403#0" expanded="true" />
+            <element signature="e#1433#1434#0" expanded="true" />
+            <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#1521#1522#0" expanded="true" />
+            <element signature="e#1553#1554#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="true" />
+            <element signature="e#1695#1696#0" expanded="true" />
+            <element signature="e#1729#1730#0" expanded="true" />
+            <element signature="e#1783#1784#0" expanded="true" />
+            <element signature="e#1829#1830#0" expanded="true" />
           </folding>
         </state>
       </provider>
