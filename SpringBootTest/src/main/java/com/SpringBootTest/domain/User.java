@@ -12,146 +12,68 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer userid;
 
     @Column(nullable = false)
-    private String name;
+    private String email;
 
     @Column(nullable = false)
-    private Integer age;
+    private String username;
+
+    @Column(nullable = false)
+    private String password; //change it to char[]
+
+    @Column()
+    private String phonenumber;
+
+    @Column(nullable = false, columnDefinition = "TINYINT", length = 1)
+    private Boolean isadmin;
+
+    @Column(nullable = false, columnDefinition = "TINYINT", length = 1)
+    private Boolean isdelete;
 
     public User(){}
 
-    public User(String name, Integer age) {
-        this.name = name;
-        this.age = age;
+    public User(String email, String username, String password, String phonenumber, Boolean isadmin, Boolean isdelete) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.phonenumber = phonenumber;
+        this.isadmin = isadmin;
+        this.isdelete = isdelete;
     }
 
-    public Long getId() {
-        return id;
+    public User(String email, String username, String password, Boolean isadmin, Boolean isdelete) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.isadmin = isadmin;
+        this.isdelete = isdelete;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getUsername() {
+        return username;
     }
 
-    public String getName() {
-        return name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getEmail() {
+        return email;
     }
 
-    public Integer getAge() {
-        return age;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public String getPhonenumber() {
+        return phonenumber;
     }
-//    @Id
-//    @GeneratedValue
-//    private Long id;
-//
-//    @Column(nullable = false)
-//    private Integer userId;
-//
-//    @Column(nullable = false)
-//    private String email;
-//
-//    @Column(nullable = false)
-//    private String userName;
-//
-//    @Column(nullable = false)
-//    private String password;
-//
-//    @Column(nullable = false)
-//    private Integer phoneNumber;
-//
-//    @Column(nullable = false)
-//    private Boolean isAdmin;
-//
-//    @Column(nullable = false)
-//    private Boolean isDelete;
-//
-//    // 构造函数
-//    public User() {
-//    }
-//
-//    public User(Integer userId, String email, String userName, String password, Integer phoneNumber, Boolean isAdmin, Boolean isDelete) {
-//        this.userId = userId;
-//        this.email = email;
-//        this.userName = userName;
-//        this.password = password;
-//        this.phoneNumber = phoneNumber;
-//        this.isAdmin = isAdmin;
-//        this.isDelete = isDelete;
-//    }
-//
-//    // getter和setter
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public Integer getUserId() {
-//        return userId;
-//    }
-//
-//    public void setUserId(Integer userId) {
-//        this.userId = userId;
-//    }
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-//
-//    public String getUserName() {
-//        return userName;
-//    }
-//
-//    public void setUserName(String userName) {
-//        this.userName = userName;
-//    }
-//
-//    public String getPassword() {
-//        return password;
-//    }
-//
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
-//
-//    public Integer getPhoneNumber() {
-//        return phoneNumber;
-//    }
-//
-//    public void setPhoneNumber(Integer phoneNumber) {
-//        this.phoneNumber = phoneNumber;
-//    }
-//
-//    public Boolean getAdmin() {
-//        return isAdmin;
-//    }
-//
-//    public void setAdmin(Boolean admin) {
-//        isAdmin = admin;
-//    }
-//
-//    public Boolean getDelete() {
-//        return isDelete;
-//    }
-//
-//    public void setDelete(Boolean delete) {
-//        isDelete = delete;
-//    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
 }
 

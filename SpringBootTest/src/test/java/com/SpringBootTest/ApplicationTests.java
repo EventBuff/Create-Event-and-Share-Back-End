@@ -1,11 +1,14 @@
 package com.SpringBootTest;
 
+import com.SpringBootTest.domain.CommentRepository;
 import com.SpringBootTest.domain.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.annotation.SystemProfileValueSource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.util.Assert;
 
 //import junit.framework.Assert;
 //import com.SpringBootTest.domain.com.SpringBootTest.com.SpringBootTest.domain.User.User;
@@ -23,19 +26,28 @@ public class ApplicationTests {
 
     @Autowired
     private UserRepository userRepository;
+    //private CommentRepository commentRepository;
 
     @Test
     public void test() throws Exception {
 
+
+
+
+//        userRepository.update(30, "CCC");
+        //System.out.println(userRepository.setFixedAgeFor(30,"CCC"));
+
         // 创建10条记录
-        userRepository.save(new com.SpringBootTest.domain.User("AAA", 10));
+
+        //userRepository.save(new com.SpringBootTest.domain.User("CCC", 12));
+        //userRepository.save(new com.SpringBootTest.domain.User("DDD", 13));
+
 
 
         // 测试findAll, 查询所有记录
 //        assertEquals(10, userRepository.findAll().size());
-        System.out.println("sss");
-        System.out.println(userRepository.findByName("AAA").getAge());
 
+        //System.out.println(userRepository.findUser("DDD").getAge());
         // 测试findByName, 查询姓名为FFF的User
 //        assertEquals(60, userRepository.findByName("abc").getEmail());
 
