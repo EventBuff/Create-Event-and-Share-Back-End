@@ -63,4 +63,8 @@ public class Comment {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    public String toString(){
+        return this.comment + " " + this.userid.toString();
+    }
 }

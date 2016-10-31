@@ -1,13 +1,13 @@
 package com.SpringBootTest;
 
-import com.SpringBootTest.domain.*;
+import com.SpringBootTest.domain.CommentRepository;
+import com.SpringBootTest.domain.EventEquipmentRepository;
+import com.SpringBootTest.domain.EventRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.annotation.SystemProfileValueSource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import java.sql.Timestamp;
 
 //import org.springframework.util.Assert;
 //import junit.framework.Assert;
@@ -25,15 +25,27 @@ public class ApplicationTests {
 
     @Autowired
     //private UserRepository userRepository;
-    //private CommentRepository commentRepository;
+    private CommentRepository commentRepository;
     //private EquipmentRepository equipmentRepository;
-    //private EventRepository eventRepository;
+    private EventRepository eventRepository;
     //private UserEventRepository userEventRepository;
     private EventEquipmentRepository eventEquipmentRepository;
 
     @Test
     public void test() throws Exception {
 
+//        String startTime = "2016-02-02 22:11:11";
+//        Timestamp myStartTime = Timestamp.valueOf(startTime);
+//        String endTime = "2016-03-02 12:22:22";
+//        Timestamp myEndTime = Timestamp.valueOf(endTime);
+//        eventRepository.save(new com.SpringBootTest.domain.Event("Hiking",  myStartTime, myEndTime,
+//                "Hiking in Boulder", 5, 1, "travel"));
+//        eventRepository.save(new com.SpringBootTest.domain.Event("Climbing",  myStartTime, myEndTime,
+//               "Climbing in Boulder", 2, 3, "climbing"));
+//        eventRepository.save(new com.SpringBootTest.domain.Event("Study",  myStartTime, myEndTime,
+//               "Study in Boulder", 4, 6, "study"));
+//        insert
+//        commentRepository.save(new com.SpringBootTest.domain.Comment(3, 2, "command1"));
 
         // 创建10条记录
 
