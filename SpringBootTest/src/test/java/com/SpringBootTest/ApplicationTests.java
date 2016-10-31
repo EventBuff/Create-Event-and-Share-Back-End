@@ -1,18 +1,17 @@
 package com.SpringBootTest;
 
-import com.SpringBootTest.domain.CommentRepository;
-import com.SpringBootTest.domain.UserRepository;
+import com.SpringBootTest.domain.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.annotation.SystemProfileValueSource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.Assert;
+import java.sql.Timestamp;
 
+//import org.springframework.util.Assert;
 //import junit.framework.Assert;
 //import com.SpringBootTest.domain.com.SpringBootTest.com.SpringBootTest.domain.User.User;
-
 //import static junit.framework.Assert.*;
 
 /**
@@ -25,17 +24,16 @@ import org.springframework.util.Assert;
 public class ApplicationTests {
 
     @Autowired
-    private UserRepository userRepository;
+    //private UserRepository userRepository;
     //private CommentRepository commentRepository;
+    //private EquipmentRepository equipmentRepository;
+    //private EventRepository eventRepository;
+    //private UserEventRepository userEventRepository;
+    private EventEquipmentRepository eventEquipmentRepository;
 
     @Test
     public void test() throws Exception {
 
-
-
-
-//        userRepository.update(30, "CCC");
-        //System.out.println(userRepository.setFixedAgeFor(30,"CCC"));
 
         // 创建10条记录
 
