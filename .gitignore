@@ -10,3 +10,4 @@ SpringBootTest/target/
 *.jar
 *.war
 *.ear
+*.properties
