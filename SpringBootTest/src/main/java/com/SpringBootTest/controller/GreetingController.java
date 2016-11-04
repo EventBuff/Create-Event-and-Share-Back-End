@@ -22,7 +22,8 @@ public class GreetingController {
     private CommentRepository commentRepository;
 
     @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="name", defaultValue="3") String name) {
+
+   public Greeting greeting(@RequestParam(value="name", defaultValue="3") String name) {
         Integer enentId = Integer.parseInt(name);
         List<Comment> commentList = commentRepository.findByEventid(enentId);
         String tmp = commentList.get(0).toString();
