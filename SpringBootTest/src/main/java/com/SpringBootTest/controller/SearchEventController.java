@@ -19,13 +19,14 @@ public class SearchEventController {
     private EventRepository eventRepository;
 
     @RequestMapping("/searchEvent")
-    public List<Event> searchEvent(){
-        List<Event> eventList = eventRepository.findAll();
-        return eventList;
-    }
-
     public List<Event> searchEvent(String eventtag){
-        List<Event> eventList = eventRepository.findByEventtag(eventtag);
+        List <Event> eventList;
+        if(eventtag == null){
+            eventList = eventRepository.findAll();
+        }
+        else {
+            eventList = eventRepository.findByEventtag(eventtag);
+        }
         return eventList;
     }
 
