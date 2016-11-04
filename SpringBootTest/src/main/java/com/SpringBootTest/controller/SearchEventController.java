@@ -24,4 +24,9 @@ public class SearchEventController {
         return eventList;
     }
 
+    public List<Event> searchEvent(String eventtag){
+        List<Event> eventList = eventRepository.findByEventtag(eventtag);
+        return eventList;
+    }
+
 }
