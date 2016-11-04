@@ -1,10 +1,19 @@
+/*
+* @Author: Lich Amnesia
+* @Date:   2016-11-04 14:51:22
+* @Last Modified by:   Lich Amnesia
+* @Last Modified time: 2016-11-04 15:04:52
+*/
+
+'use strict';
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './Event.css';
 import axios from 'axios';
 
 
-class App extends Component {
+class Event extends Component {
   constructor(props) {
     super(props);
 
@@ -40,21 +49,17 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-      
-      <Event />
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className="Event">
+        <div className="Event-header">
+          <img src={logo} className="Event-logo" alt="logo" />
           <h2>Welcome to React </h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+        <p className="Event-intro">
+          This is for event, edit <code>src/Event.js</code> and save to reload.
         </p>
         <ul>
           {this.state.posts}
         </ul>
-      </div>
       </div>
     );
   }
