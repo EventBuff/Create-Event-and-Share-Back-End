@@ -42,10 +42,24 @@ public class Event {
     @Column(nullable = false)
     private Integer creatorid;
 
+    @Column(nullable = false)
+    private String eventphoto;
+
+    @Column(nullable = false)
+    private String location;
+
+    @Column(nullable = false, columnDefinition = "TINYINT", length = 1)
+    private Boolean isclose;
+
+    @Column()
+    private String closereason;
+
+
     public Event(){}
 
     public Event(String eventtitle, Timestamp starttime, Timestamp endtime,
-                 String eventdescription, Integer numofpeople, Integer nownum, String eventtag){
+                 String eventdescription, Integer numofpeople, Integer nownum, String eventtag,
+                 String eventphoto, String location, Boolean isclose){
         this.eventtitle = eventtitle;
         this.starttime = starttime;
         this.endtime = endtime;
@@ -53,6 +67,25 @@ public class Event {
         this.numofpeople = numofpeople;
         this.nownum = nownum;
         this.eventtag = eventtag;
+        this.eventphoto = eventphoto;
+        this.location = location;
+        this.isclose = isclose;
+    }
+
+    public Event(String eventtitle, Timestamp starttime, Timestamp endtime,
+                 String eventdescription, Integer numofpeople, Integer nownum, String eventtag,
+                 String eventphoto, String location, Boolean isclose, String closereason){
+        this.eventtitle = eventtitle;
+        this.starttime = starttime;
+        this.endtime = endtime;
+        this.eventdescription = eventdescription;
+        this.numofpeople = numofpeople;
+        this.nownum = nownum;
+        this.eventtag = eventtag;
+        this.eventphoto = eventphoto;
+        this.location = location;
+        this.isclose = isclose;
+        this.closereason = closereason;
     }
 
     public Integer getEventid() {
@@ -125,5 +158,37 @@ public class Event {
 
     public void setCreatorid(Integer creatorid) {
         this.creatorid = creatorid;
+    }
+
+    public String getEventphoto() {
+        return eventphoto;
+    }
+
+    public void setEventphoto(String eventphoto) {
+        this.eventphoto = eventphoto;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public Boolean getIsclose() {
+        return isclose;
+    }
+
+    public void setIsclose(Boolean isclose) {
+        this.isclose = isclose;
+    }
+
+    public String getClosereason() {
+        return closereason;
+    }
+
+    public void setClosereason(String closereason) {
+        this.closereason = closereason;
     }
 }
