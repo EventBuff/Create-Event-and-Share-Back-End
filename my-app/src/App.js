@@ -1,60 +1,61 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import axios from 'axios';
-
+import Event from './Event'
+import { SiderMenu, Form, FormControl, Navbar, Glyphicon,
+  Nav, NavItem, Well, Row, Col, Button } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      posts: ''
+      current: 'Event'
     };
-    this.myFunction = this.myFunction.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   
-  myFunction(){
-    axios.get('/greeting', {
-        name: 2
-      }).then(res => {
-        const posts = res.data.content;
-        this.setState({ posts });
-      });
-      // function(response){
-      //     console.log(response);
-      //     const post = response.data.content;
-      //     console.log(post)
-      //     this.setState({ post });
-      // });
+  handleClick(e) {
+    console.log('click ', {e});
+    var c = this.state.current;
+    console.log('click ', {c});
+    // alert(`selected ${e}`);
+    this.setState({
+      current: {e}.e
+    });
+    c = this.state.current;
+    console.log('click ', {c});
   }
 
-  componentDidMount() {
-    this.myFunction();
-    
-    //     res => {
-    //     const posts = res.data;
-    //     this.setState({ posts });
-    // });
-  }
 
   render() {
+    var content;
+    switch (this.state.current) {
+      case "Event":
+        content =  <Event />;
+        break;
+      case 2:
+        content =  "This key is 2";
+        break;
+      default:
+        content = "ss";
+    }
+    var c = this.state.current;
+    console.log('click ', {c});
     return (
-      <div>
-      
-      <Event />
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React </h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <ul>
-          {this.state.posts}
-        </ul>
-      </div>
+      <div className="App-main">
+        <Row>
+          <Col span={20} offset={2}>
+            <div className="main-top">Even Search</div>
+          </Col>
+        </Row>
+        <Nav bsStyle="pills" activeKey={2} onSelect={this.handleClick}>
+          <NavItem eventKey="Event" href="/home">NavItem 1 content</NavItem>
+          <NavItem eventKey={2} title="Item">NavItem 2 content</NavItem>
+          <NavItem eventKey="3" disabled>NavItem 3 content</NavItem>
+        </Nav>
+        <div className="content-div">
+              {content}
+            </div>
       </div>
     );
   }

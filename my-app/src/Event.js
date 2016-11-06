@@ -2,30 +2,33 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-04 14:51:22
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-04 15:04:52
+* @Last Modified time: 2016-11-04 20:09:19
 */
 
-'use strict';
 
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Event.css';
 import axios from 'axios';
-
+import { Grid, Row, Col, Thumbnail, Glyphicon, Badge, Button }
+  from 'react-bootstrap';
 
 class Event extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      posts: ''
+      posts: '',
+      value: '',
     };
     this.myFunction = this.myFunction.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.searchEvent = this.searchEvent.bind(this);
   }
   
   myFunction(){
-    axios.get('/greeting', {
-        name: 2
+    axios.get('/greeting?name=2', {
+        // name: 2
       }).then(res => {
         const posts = res.data.content;
         this.setState({ posts });
@@ -47,7 +50,34 @@ class Event extends Component {
     // });
   }
 
+  handleChange(event){
+    this.setState({value: event.target.value});
+  }
+
+  searchEvent(event){
+    console.log(this.state.value);
+    axios.get('/greeting', {
+        params: {
+          name: this.state.value
+        }
+      }).then(res => {
+        var post = res.data.content;
+        this.setState({ 
+          posts: post 
+        });
+      });
+  }
+
   render() {
+    var value = this.state.value;
+    var posts = this.state.posts;
+    // Display get product button
+    const searchEventButton =
+      <Button
+          onClick={this.searchEvent}
+          bsStyle="success"
+          bsSize="large">Search
+      </Button>;
     return (
       <div className="Event">
         <div className="Event-header">
@@ -60,9 +90,15 @@ class Event extends Component {
         <ul>
           {this.state.posts}
         </ul>
+        <div>
+            <input type="text" value={value} onChange={this.handleChange} />
+            <p>{value}</p>
+            {searchEventButton}
+            {posts}
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default Event;
