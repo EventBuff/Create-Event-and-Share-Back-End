@@ -2,14 +2,14 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-04 14:51:22
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-06 15:16:14
+* @Last Modified time: 2016-11-06 15:43:44
 */
 
 
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Event.css';
-import Navigation from './Navigation';
+// import Navigation from './Navigation';
 import axios from 'axios';
 import { Button }
   from 'react-bootstrap';
@@ -43,12 +43,7 @@ class Event extends Component {
   }
 
   componentDidMount() {
-    this.myFunction();
-    
-    //     res => {
-    //     const posts = res.data;
-    //     this.setState({ posts });
-    // });
+    // this.myFunction();
   }
 
   handleChange(event){
@@ -81,12 +76,7 @@ class Event extends Component {
       </Button>;
     return (
       <div>
-        <Navigation />
         <div className="Event">
-          <div className="Event-header">
-            <img src={logo} className="Event-logo" alt="logo" />
-            <h2>Welcome to React </h2>
-          </div>
           <p className="Event-intro">
             This is for event, edit <code>src/Event.js</code> and save to reload.
           </p>

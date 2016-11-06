@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Event from './Event'
+import Event from './Event';
+import Navigation from './Navigation';
 import { Form, FormControl, Navbar, Glyphicon,
   Nav, NavItem, Well, Row, Col, Button } from 'react-bootstrap';
 
@@ -43,19 +44,7 @@ class App extends Component {
     console.log('click ', {c});
     return (
       <div className="App-main">
-        <Row>
-          <Col span={20} offset={2}>
-            <div className="main-top">Even Search</div>
-          </Col>
-        </Row>
-        <Nav bsStyle="pills" activeKey={2} onSelect={this.handleClick}>
-          <NavItem eventKey="Event" href="/home">NavItem 1 content</NavItem>
-          <NavItem eventKey={2} title="Item">NavItem 2 content</NavItem>
-          <NavItem eventKey="3" disabled>NavItem 3 content</NavItem>
-        </Nav>
-        <div className="content-div">
-              {content}
-            </div>
+        <Navigation />
       </div>
     );
   }
