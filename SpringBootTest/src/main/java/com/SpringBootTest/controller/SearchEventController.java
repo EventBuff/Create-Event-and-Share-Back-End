@@ -21,7 +21,7 @@ public class SearchEventController {
     @RequestMapping("/searchEvent")
     public List<Event> searchEvent(String eventtag){
         List <Event> eventList;
-        if(eventtag == null){
+        if(eventtag == null || eventtag.length() == 0){
             eventList = eventRepository.findAll();
         }
         else {
