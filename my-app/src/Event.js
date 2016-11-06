@@ -2,15 +2,16 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-04 14:51:22
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-04 20:09:19
+* @Last Modified time: 2016-11-06 16:47:45
 */
 
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './Event.css';
+// import Navigation from './Navigation';
 import axios from 'axios';
-import { Grid, Row, Col, Thumbnail, Glyphicon, Badge, Button }
+import { Button, Row, Col}
   from 'react-bootstrap';
 
 class Event extends Component {
@@ -24,13 +25,15 @@ class Event extends Component {
     this.myFunction = this.myFunction.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.searchEvent = this.searchEvent.bind(this);
+    this.showPosts = this.showPosts.bind(this);
   }
   
   myFunction(){
-    axios.get('/greeting?name=2', {
+    axios.get('/searchEvent', {
         // name: 2
       }).then(res => {
-        const posts = res.data.content;
+        const posts = res.data;
+        console.log(res.data);
         this.setState({ posts });
       });
       // function(response){
@@ -43,11 +46,6 @@ class Event extends Component {
 
   componentDidMount() {
     this.myFunction();
-    
-    //     res => {
-    //     const posts = res.data;
-    //     this.setState({ posts });
-    // });
   }
 
   handleChange(event){
@@ -55,17 +53,36 @@ class Event extends Component {
   }
 
   searchEvent(event){
-    console.log(this.state.value);
-    axios.get('/greeting', {
+    console.log("value: " + this.state.value);
+    axios.get('/searchEvent', {
         params: {
-          name: this.state.value
+          eventtag: this.state.value
         }
       }).then(res => {
-        var post = res.data.content;
-        this.setState({ 
-          posts: post 
-        });
+        this.showPosts(res.data);
       });
+
+  }
+
+  showPosts(data){
+    if (data === null || data.length === 0) {
+      this.setState({ 
+          posts: ''
+      });
+    } else {
+      var content = data.map((x) =>
+          <div>
+            <h4> {x.eventtitle} </h4>
+            <p> {x.eventdescription} </p>  
+          </div>
+      );
+      
+      this.setState({ 
+          posts: content
+      });
+    }
+    
+    
   }
 
   render() {
@@ -79,22 +96,19 @@ class Event extends Component {
           bsSize="large">Search
       </Button>;
     return (
-      <div className="Event">
-        <div className="Event-header">
-          <img src={logo} className="Event-logo" alt="logo" />
-          <h2>Welcome to React </h2>
-        </div>
-        <p className="Event-intro">
-          This is for event, edit <code>src/Event.js</code> and save to reload.
-        </p>
-        <ul>
-          {this.state.posts}
-        </ul>
-        <div>
-            <input type="text" value={value} onChange={this.handleChange} />
-            <p>{value}</p>
-            {searchEventButton}
-            {posts}
+      <div>
+        <div className="Event">
+          <Row>
+            <Col className="Eventtags" xs={12} md={3}>
+            Tags:
+              <input type="text" value={value} onChange={this.handleChange} />
+              <p>{value}</p>
+              {searchEventButton}
+            </Col>
+            <Col md={9}>
+              {posts}
+            </Col>
+          </Row>
         </div>
       </div>
     );
