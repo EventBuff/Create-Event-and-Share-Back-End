@@ -4,9 +4,8 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.helpers.MessageFormatter;
 
 /**
- * Created by yanli on 11/4/16.
+ * Created by yanli on 11/6/16.
  */
-
 public class Logger
 {
     private org.slf4j.Logger logger;
