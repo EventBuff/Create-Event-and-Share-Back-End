@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Event from './Event'
-import { SiderMenu, Form, FormControl, Navbar, Glyphicon,
+import { Form, FormControl, Navbar, Glyphicon,
   Nav, NavItem, Well, Row, Col, Button } from 'react-bootstrap';
 
 class App extends Component {
