@@ -1,12 +1,11 @@
-package cn.edu.hdu.webbf.common.log;
+package com.SpringBootTest.common;
 
 import org.slf4j.LoggerFactory;
 import org.slf4j.helpers.MessageFormatter;
 
 /**
- * Facade for SLF4J's logger.
+ * Created by yanli on 11/6/16.
  */
-
 public class Logger
 {
     private org.slf4j.Logger logger;
