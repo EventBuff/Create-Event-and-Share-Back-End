@@ -2,7 +2,7 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-06 14:58:09
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-06 15:33:28
+* @Last Modified time: 2016-11-06 16:43:36
 */
 
 /*
@@ -13,11 +13,10 @@
 */
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './Navigation.css';
 import Event from './Event';
 import axios from 'axios';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Badge, Button }
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem }
   from 'react-bootstrap';
 
 class Navigation extends Component {
@@ -64,16 +63,14 @@ class Navigation extends Component {
   }
  
   render() {
-    var value = this.state.value;
-    var posts = this.state.posts;
     var content = this.state.content;
     // Display get product button
-    const searchEventButton =
-      <Button
-          onClick={this.searchEvent}
-          bsStyle="success"
-          bsSize="large">Search
-      </Button>;
+    // const searchEventButton =
+    //   <Button
+    //       onClick={this.searchEvent}
+    //       bsStyle="success"
+    //       bsSize="large">Search
+    //   </Button>;
     switch (this.state.current) {
       case "Search Event":
         content =  <Event />;
