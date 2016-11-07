@@ -2,7 +2,7 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-04 14:51:22
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-06 16:47:45
+* @Last Modified time: 2016-11-06 20:27:51
 */
 
 
@@ -13,6 +13,7 @@ import './Event.css';
 import axios from 'axios';
 import { Button, Row, Col}
   from 'react-bootstrap';
+import { Link } from 'react-router';
 
 class Event extends Component {
   constructor(props) {
@@ -72,7 +73,7 @@ class Event extends Component {
     } else {
       var content = data.map((x) =>
           <div>
-            <h4> {x.eventtitle} </h4>
+            <h4><Link to={`/event/${x.eventtitle}`}> {x.eventtitle} </Link></h4>
             <p> {x.eventdescription} </p>  
           </div>
       );
