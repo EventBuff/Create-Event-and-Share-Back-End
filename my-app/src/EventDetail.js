@@ -2,13 +2,13 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-06 20:43:01
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-06 21:41:17
+* @Last Modified time: 2016-11-06 21:57:41
 */
 
 import React, { Component, PropTypes } from 'react';
 import './EventDetail.css';
 import axios from 'axios';
-// import { Link } from 'react-router';
+import { Link } from 'react-router';
 import { Grid } from 'react-bootstrap';
 
 class EventDetail extends Component {
@@ -44,18 +44,18 @@ class EventDetail extends Component {
   }
 
   showEventDetail(data) {
+    console.log(data);
     if (data === null || data.length === 0) {
       this.setState({ 
           posts: ''
       });
     } else {
-      var content = data.map((x) =>
-          <div key={x.eventid}>
-            <h4><Link to={`/eventDetail/${x.eventid}`}> {x.eventtitle} </Link></h4>
-            <p> {x.eventdescription} </p>  
-          </div>
-      );
-      
+      var content = 
+          <div>
+            <h4><Link to={`/eventDetail/${data.eventid}`}> {data.eventtitle} </Link></h4>
+            <p> {data.eventtag} </p>
+            <p> {data.eventdescription} </p>  
+          </div>;
       this.setState({ 
           posts: content,
           postsCheckNum: 1
