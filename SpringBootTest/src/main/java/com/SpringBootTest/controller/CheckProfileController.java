@@ -1,7 +1,8 @@
 package com.SpringBootTest.controller;
 
-import com.SpringBootTest.domain.Event;
 import com.SpringBootTest.domain.EventRepository;
+import com.SpringBootTest.domain.User;
+import com.SpringBootTest.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class EventDetail {
+public class CheckProfileController {
     @Autowired
-    private EventRepository eventRepository;
+    private UserRepository userRepository;
 
-    @RequestMapping("/eventDetail")
-    public Event eventDetail(Integer eventid){
-        if(eventRepository.findByEventid(eventid) != null){
-            return eventRepository.findByEventid(eventid);
+    @RequestMapping("/profile")
+    public User checkProfile(Integer userid){
+        if(userRepository.findByUserid(userid) != null){
+            return(userRepository.findByUserid(userid));
         }
         else return null;
     }
