@@ -2,7 +2,7 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-06 14:58:09
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-06 16:43:36
+* @Last Modified time: 2016-11-06 21:34:11
 */
 
 /*
@@ -16,8 +16,9 @@ import React, { Component } from 'react';
 import './Navigation.css';
 import Event from './Event';
 import axios from 'axios';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem }
-  from 'react-bootstrap';
+import { Link } from 'react-router';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 class Navigation extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class Navigation extends Component {
    }
 
   componentDidMount() {
+    this.setState({ posts: '' });
     // this.myFunction();
     
     //     res => {
@@ -64,36 +66,34 @@ class Navigation extends Component {
  
   render() {
     var content = this.state.content;
-    // Display get product button
-    // const searchEventButton =
-    //   <Button
-    //       onClick={this.searchEvent}
-    //       bsStyle="success"
-    //       bsSize="large">Search
-    //   </Button>;
     switch (this.state.current) {
       case "Search Event":
+        // window.open();
         content =  <Event />;
         break;
-      case 2:
+      case "Create":
         content =  "This key is 2";
         break;
       default:
-        content = "ss";
+        content = "The original";
     }
     return (
       <div>
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">Event Create and Share</a>
+               <Link to="/">Event Create and Share</Link>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
-            <Nav onSelect={this.handleClick}>
-              <NavItem eventKey="Create" href="/Home">Create Event</NavItem>
-              <NavItem eventKey="Search Event" ref="#">Search Event</NavItem>
+            <Nav>
+              <LinkContainer to="/event">
+                <NavItem eventKey="Search Event">Search Event</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/createevent">
+                <NavItem eventKey="Create Event">Create Event</NavItem>
+              </LinkContainer>
             </Nav>
             <Nav pullRight>
               <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
@@ -108,7 +108,7 @@ class Navigation extends Component {
           </Navbar.Collapse>
         </Navbar>
         <div className="content-div">
-            {content}
+
         </div>
       </div>
     );
