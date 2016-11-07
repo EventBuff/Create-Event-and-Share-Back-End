@@ -1,0 +1,53 @@
+.bgimage {
+	background-image: url('../images/y_01.jpg');
+	background-position: center center;
+	background-size: cover;
+	height: 100px;
+}
+
+.bck_main {
+	background-image: url('../images/bck_main.jpg');
+	background-position: center center;
+	background-size: cover;
+	height: 1200px;
+	padding-top: 20px;
+
+}
+
+.navbar-fnt {
+    color: blue;
+}
+.navbar-backgrnd {
+    color: #CC3333;
+}
+
+.panel{
+    background-color: transparent;
+    border: 1px #222;
+}
+
+.navbar_porb {
+	background-color: transparent;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 35px; 
+	color: black;
+}
+
+.navbar_icon {
+	background-color: transparent;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 25px; 
+	color: black;
+}
+
+.sample {
+	position:absolute;
+	top:25px;
+	z-index:10;
+	width:100%;
+	background-color: transparent;
+	padding-right: 20px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 17px; 
+	color: white;
+}
