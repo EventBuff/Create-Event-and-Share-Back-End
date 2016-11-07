@@ -2,7 +2,7 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-06 14:58:09
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-06 20:42:06
+* @Last Modified time: 2016-11-06 21:34:11
 */
 
 /*
@@ -66,13 +66,6 @@ class Navigation extends Component {
  
   render() {
     var content = this.state.content;
-    // Display get product button
-    // const searchEventButton =
-    //   <Button
-    //       onClick={this.searchEvent}
-    //       bsStyle="success"
-    //       bsSize="large">Search
-    //   </Button>;
     switch (this.state.current) {
       case "Search Event":
         // window.open();

@@ -2,7 +2,7 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-04 14:51:22
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-06 20:27:51
+* @Last Modified time: 2016-11-06 21:33:34
 */
 
 
@@ -46,7 +46,7 @@ class Event extends Component {
   }
 
   componentDidMount() {
-    this.myFunction();
+    // this.myFunction();
   }
 
   handleChange(event){
@@ -54,7 +54,7 @@ class Event extends Component {
   }
 
   searchEvent(event){
-    console.log("value: " + this.state.value);
+    // console.log("value: " + this.state.value);
     axios.get('/searchEvent', {
         params: {
           eventtag: this.state.value
@@ -72,8 +72,8 @@ class Event extends Component {
       });
     } else {
       var content = data.map((x) =>
-          <div>
-            <h4><Link to={`/event/${x.eventtitle}`}> {x.eventtitle} </Link></h4>
+          <div key={x.eventid}>
+            <h4><Link to={`/eventDetail/${x.eventid}`}> {x.eventtitle} </Link></h4>
             <p> {x.eventdescription} </p>  
           </div>
       );
