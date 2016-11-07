@@ -7,7 +7,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 // import Navigation from './Navigation';
 import NotFound from './NotFound';
 import Event from './Event';
-import EventDetail from './EventDetail'
+import EventDetail from './EventDetail';
+import Profile from './Profile';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import './index.css';
@@ -18,7 +19,8 @@ const routes =
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path='/event' component={Event} />
-    <Route path="/eventDetail/:slug" component={EventDetail} />
+    <Route path='/eventDetail/:slug' component={EventDetail} />
+    <Route path='/profile/:slug' component={Profile} />
     <Route path='*' component={NotFound} />
   </Route>
 </Router>;
