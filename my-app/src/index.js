@@ -9,6 +9,7 @@ import NotFound from './NotFound';
 import Event from './Event';
 import EventDetail from './EventDetail';
 import Profile from './Profile';
+import Login from './Login';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import './index.css';
@@ -20,7 +21,8 @@ const routes =
     <IndexRoute component={Home} />
     <Route path='/event' component={Event} />
     <Route path='/eventDetail/:slug' component={EventDetail} />
-    <Route path='/profile/:slug' component={Profile} />
+    <Route path='/profile' component={Profile} />
+    <Route path='/login' component={Login} />
     <Route path='*' component={NotFound} />
   </Route>
 </Router>;

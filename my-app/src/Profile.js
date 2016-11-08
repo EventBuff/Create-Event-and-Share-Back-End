@@ -2,7 +2,7 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-06 21:56:58
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-06 22:26:57
+* @Last Modified time: 2016-11-07 17:53:49
 */
 
 
@@ -29,9 +29,10 @@ class Profile extends Component {
 
   componentDidMount() {
     const slug = this.props.params.slug;
+    console.log("for userid " + slug);
     axios.get('/profile', {
       params: {
-        userid: slug  
+        // userid: slug  
       }
       }).then(res => {
         this.showProfile(res.data);

@@ -2,7 +2,7 @@
 * @Author: Lich Amnesia
 * @Date:   2016-11-06 14:58:09
 * @Last Modified by:   Lich Amnesia
-* @Last Modified time: 2016-11-06 22:06:23
+* @Last Modified time: 2016-11-07 17:52:47
 */
 
 /*
@@ -103,7 +103,10 @@ class Navigation extends Component {
                 <MenuItem divider />
                 <MenuItem eventKey={3.3}>Separated link</MenuItem>
               </NavDropdown>
-              <LinkContainer to="/profile/5">
+              <LinkContainer to="/login">
+                <NavItem eventKey="Log In">Log In</NavItem>
+              </LinkContainer>
+              <LinkContainer to="/profile">
                 <NavItem eventKey="Check Profile">Profile</NavItem>
               </LinkContainer>
             </Nav>
