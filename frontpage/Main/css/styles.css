@@ -22,8 +22,6 @@
 	font-style: italic;
 	font-weight: bold;
 	font-variant: small-caps;
-
-
 }
 
 .navbar_panel{
@@ -33,9 +31,15 @@
     border-color: #000000 !important;
 }
 
+.navbar_text { 
+	font-size: 15px; 
+	color: 	#008000 ;
+	text-decoration: underline;
+	font-style: italic;
+	font-weight: bold;
+	font-variant: small-caps;
 
-
-
+}
 
 
 .navbar-fnt {
